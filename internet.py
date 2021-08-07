@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 # para rodar o chrome em 2º plano
 from selenium.webdriver.chrome.options import Options
+import pywhatkit
 
 
 chrome_options = Options()
@@ -16,3 +17,7 @@ def get_euro():
     browser.get('https://www.google.com/search?q=euro&ei=kg3uYND0GsOp1sQPtaK9kAw&oq=euro&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAELEDEEMyBQgAELEDMgQIABBDMgQIABBDMgUILhCxAzIFCAAQsQMyBAgAEEMyBAgAEEMyBQgAELEDMgIIADoHCAAQRxCwAzoKCC4QsAMQQxCTAjoHCAAQsAMQQzoHCC4QQxCTAjoLCC4QsQMQxwEQowI6CAgAELEDEIMBSgQIQRgAUI28BVjTvgVg-L8FaANwAngAgAFyiAHBA5IBAzAuNJgBAKABAaoBB2d3cy13aXrIAQrAAQE&sclient=gws-wiz&ved=0ahUKEwjQhd-0huHxAhXDlJUCHTVRD8IQ4dUDCA4&uact=5')
     euro =browser.find_element_by_xpath('//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').get_attribute('data-value')
     return euro
+
+def mensagem():
+    pywhatkit.sendwhatmsg_instantly('+5511988110909',"Testando",wait_time= 20 , tab_close= True)
+

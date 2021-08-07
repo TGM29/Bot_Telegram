@@ -53,6 +53,11 @@ def dolar(update: Update, context: CallbackContext) -> None:
 def euro(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f'O valor do euro é: R${get_euro()}')
 
+def teste(update: Update, context: CallbackContext) -> None:
+    mensagem()
+    update.message.reply_text('Mensagem enviada')
+
+
 
 
 def main() -> None:
@@ -71,6 +76,7 @@ def main() -> None:
     dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(CommandHandler("euro", euro))
     dispatcher.add_handler(CommandHandler("dolar", dolar))
+    dispatcher.add_handler(CommandHandler("teste", teste))
 
     # on non command i.e message - echo the message on Telegram
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))
